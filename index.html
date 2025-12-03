@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Brother!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.97);
+            border-radius: 32px;
+            box-shadow: 0 12px 40px rgba(67,198,172,0.18);
+            padding: 40px 32px;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            color: #43c6ac;
+            text-align: center;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px #43c6ac33;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 36px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        .photo-card {
+            background: linear-gradient(120deg, #f8ffae 60%, #43c6ac 100%);
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(67,198,172,0.13);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .photo-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(67,198,172,0.22);
+        }
+        .photo-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-bottom: 2px solid #43c6ac44;
+        }
+        .quote {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.1rem;
+            color: #2d7267;
+            background: rgba(255,255,255,0.8);
+            padding: 16px 12px;
+            text-align: center;
+            margin: 0;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 2px 8px #43c6ac22;
+        }
+        .message {
+            background: linear-gradient(90deg, #43c6ac 0%, #f8ffae 100%);
+            border-radius: 18px;
+            padding: 28px;
+            color: #333;
+            font-size: 1.18rem;
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px #43c6ac22;
+        }
+        .footer {
+            text-align: center;
+            color: #888;
+            font-size: 1.05rem;
+            margin-top: 32px;
+        }
+        .confetti {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .confetti-piece {
+            position: absolute;
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: confetti-fall linear forwards;
+        }
+        @keyframes confetti-fall {
+            0% { top: -20px; opacity: 1; }
+            100% { top: 100vh; opacity: 0.5; }
+        }
+        .floating-balloons {
+            position: fixed;
+            bottom: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 9998;
+        }
+        .balloon {
+            position: absolute;
+            bottom: -60px;
+            width: 36px; height: 48px;
+            border-radius: 18px 18px 18px 18px / 28px 28px 18px 18px;
+            opacity: 0.85;
+            box-shadow: 0 4px 16px #43c6ac22;
+            animation: balloon-rise linear forwards;
+        }
+        @keyframes balloon-rise {
+            0% { bottom: -60px; opacity: 1; }
+            100% { bottom: 100vh; opacity: 0.3; }
+        }
+        @media (max-width: 900px) {
+            .container {
+                max-width: 98vw;
+                padding: 18px 4vw;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 18px;
+            }
+            .photo-card img {
+                height: 180px;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 8px 2vw;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .photo-card img {
+                height: 120px;
+            }
+            .message {
+                font-size: 1rem;
+                padding: 12px;
+            }
+            .footer {
+                font-size: 0.9rem;
+            }
+            .btn {
+                font-size: 1rem;
+                padding: 8px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday, Keshav! 🎉</h1>
+        <div class="subtitle">Wishing you a day filled with adventure, joy, and unforgettable memories!</div>
+        <div class="gallery">
+            <div class="photo-card">
+                <img src="img1.jpg" alt="Birthday Memory 1">
+                <div class="quote">"Brothers aren’t just family, they’re lifelong friends."</div>
+                <a href="page1.html" class="btn">See More</a>
+            </div>
+            <div class="photo-card">
+                <img src="img2.jpg" alt="Birthday Memory 2">
+                <div class="quote">"You are my partner in crime and my greatest supporter."</div>
+                <a href="page2.html" class="btn">See More</a>
+            </div>
+            <div class="photo-card">
+                <img src="img3.jpg" alt="Birthday Memory 3">
+                <div class="quote">"No matter where life takes us, you’ll always be my hero."</div>
+                <a href="page3.html" class="btn">See More</a>
+            </div>
+            <div class="photo-card">
+                <img src="img4.jpg" alt="Birthday Memory 4">
+                <div class="quote">"From childhood adventures to grown-up dreams, I’m grateful for every moment with you."</div>
+                <a href="page4.html" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="message">
+            You are not just my brother, but my best friend, my guide, and my biggest cheerleader. May your birthday be as amazing as you are!<br><br>
+            Cheers to all the epic memories we've shared and many more to come. Love you always!
+        </div>
+        <div class="footer">
+            &copy; 2025 With love from your sister 💙
+        </div>
+    </div>
+    <div class="confetti"></div>
+    <div class="floating-balloons"></div>
+    <audio id="birthday-audio" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfae7c2.mp3" preload="auto"></audio>
+    <script>
+        // Confetti animation
+        function createConfettiPiece() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti-piece';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDuration = (2 + Math.random() * 3) + 's';
+            confetti.style.background = `hsl(${Math.random()*360}, 70%, 60%)`;
+            document.querySelector('.confetti').appendChild(confetti);
+            setTimeout(() => confetti.remove(), 5000);
+        }
+        setInterval(createConfettiPiece, 120);
+        // Play birthday music
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('birthday-audio').play();
+            }, 800);
+        };
+        // Balloon animation
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.style.left = Math.random() * 90 + 'vw';
+            balloon.style.background = `linear-gradient(135deg, hsl(${Math.random()*360}, 80%, 70%), #fff)`;
+            balloon.style.animationDuration = (4 + Math.random() * 4) + 's';
+            document.querySelector('.floating-balloons').appendChild(balloon);
+            setTimeout(() => balloon.remove(), 8000);
+        }
+        setInterval(createBalloon, 350);
+    </script>
+</body>
+</html>
